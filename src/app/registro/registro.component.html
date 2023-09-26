@@ -1,0 +1,106 @@
+<div>
+	<p *ngIf="!registros.length">
+		Não há horários cadastrados!
+	</p>
+
+	<div class="row" style="margin-top: 5%;">
+		<div class="col-10 col-sm-6">
+			<div class="container" style="background-color: rgb(223, 132, 132); padding: 2%; border-radius: 5px;">
+				<div class="row align-items-end justify-content-center">
+					<div class="col-md-3 col-sm-6 col-5  mb-3 mb-sm-0">
+						<label>Hora:</label>
+						<input type="time" class="form-control" #horaBase />
+					</div>
+	
+					<div class="col-md-4 col-sm-6 col-7 mb-3 mb-sm-0">
+						<label>Quantidade (gramas):</label>
+						<input type="number" class="form-control" #qtdBase />
+					</div>
+	
+					<div class="col-md-4 col-12">
+						<button type="button" (click)="adicionarRegistro()" class="btn btn-dark">Adicionar Registro</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<!--div class="estiloRegistroBase">
+		<div>
+			<label>Hora:</label>
+			<input type="time" #horaBase />
+		</div>
+		<div>
+			<label>Quantidade (gramas):</label>
+			<input type="number" style="width: 170px;" #qtdBase />
+		</div>
+
+		<button type="button" (click)="adicionarRegistro()" class="btn btn-dark">Adicionar Registro</button>
+	</div-->
+
+	<div class="painelRegistros">
+		<h4 *ngIf="registros.length">
+			Lista de horários cadastrados
+		</h4>
+
+		<div class="listaRegistros">
+			<app-registro-filho *ngFor="let registro of registros" [registroFilho]="registro" [id]="registro.ident"
+				(meuEvento)="paiExcluiRegistro($event)">
+			</app-registro-filho>
+		</div>
+	</div>
+
+</div>
+
+
+<p *ngIf="!registros.length">
+	Não há horários cadastrados!
+</p>
+
+<!--
+<div style="background-color: aqua;">
+	<div class="container">
+		<div class="row">
+			<div>
+				<label>Hora:</label>
+				<input type="time" class="form-control" #horaBase />
+			</div>
+
+			<div>
+				<label>Quantidade (gramas):</label>
+				<input type="number" class="form-control" #qtdBase />
+			</div>
+
+			<div>
+				<button type="button" (click)="adicionarRegistro()" class="btn btn-dark btn-sm-2">Adicionar Registro</button>
+			</div>
+		</div>
+	</div>
+</div>
+-->
+
+
+
+
+
+
+
+<!--
+<div style="background-color: blueviolet; display: flex; flex-direction: row;">
+	<div>
+		<label>Hora:</label>
+		<input type="time" class="form-control" #horaBase />
+	</div>
+
+	<div>
+		<label>Quantidade (gramas):</label>
+		<input type="number" class="form-control" #qtdBase /> 
+	</div>
+
+	<div>
+		<button type="button" (click)="adicionarRegistro()" class="btn btn-dark btn-sm-2">Adicionar
+			Registro</button>
+	</div>
+</div>
+-->

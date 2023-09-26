@@ -1,0 +1,29 @@
+.estiloRegistro {
+	display: flex;
+	align-items: flex-end;
+	gap: 20px;
+  	border-radius: 5px;
+	padding: 0px;
+	background-color: #cccccc;
+	margin-bottom: 15px;
+	max-width:max-content;
+	/* border: 1px solid black; */
+}
+/*
+input {
+	width: 100px;
+	font-size: 20px;
+	text-align: center;
+	font-family:'Times New Roman', Times, serif;
+}
+
+label {
+	display: block;
+	font-size: 20px;
+	font-family:'Times New Roman', Times, serif;
+}
+
+button {
+	height: 40px;
+}
+*/

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "teste-alimentador": {
+      "hosting": {
+        "PROJETO": [
+          "teste-alimentador"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "teste-alimentador"
+  }
+}
