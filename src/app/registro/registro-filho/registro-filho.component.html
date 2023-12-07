@@ -1,34 +1,18 @@
-<!--
-<div class="estiloRegistro shadow p-3 mb-5 bg-body-tertiary rounded">
-	<div>
-		<label>Hora:</label>
-		<input type="time" [value]=" registroFilho.hora " />
-	</div>
-	<div>
-
-		<label>Quantidade (gramas):</label>
-		<input type="number" style="width: 170px;" [value]="registroFilho.quantidade" />
-	</div>
-
-	<button type="button" (click)="filhoExcluido($event)" class="btn btn-danger">Excluir Registro</button>
-</div>
--->
-
-<div class="col-12 col-sm-6 mb-2">
-	<div class="container" style="background-color: rgb(223, 132, 132); padding: 2%; border-radius: 5px;">
+<div class="col-12 col-md-6 mb-2">
+	<div class="container" style="background-color: rgb(151, 185, 235); padding: 2%; border-radius: 5px;">
 		<div class="row align-items-end justify-content-center">
-			<div class="col-md-3 col-sm-6 col-5  mb-3 mb-sm-0">
+			<div class="col-md-3 col-sm-6 col-8  mb-3 mb-sm-0">
 				<label>Hora:</label>
-				<input type="time"  class="form-control" [value]="registroFilho.hora" />
+				<input type="time" class="form-control" [(ngModel)]="hora" name="hora" (ngModelChange)="filhoAtualizaPai()"/>
 			</div>
 
-			<div class="col-md-4 col-sm-6 col-7 mb-3 mb-sm-0">
+			<div class="col-md-4 col-sm-6 col-8 mb-3 mb-sm-0">
 				<label>Quantidade (gramas):</label>
-				<input type="number" class="form-control" [value]="registroFilho.quantidade" />
+				<input type="number" class="form-control" [(ngModel)]="quantidade" name="quantidade" (ngModelChange)="filhoAtualizaPai()"/>
 			</div>
 
 			<div class="col-md-4 col-12">
-				<button type="button" (click)="filhoExcluido($event)" class="btn btn-danger">Excluir Registro</button>
+				<button type="button" (click)="filhoExcluido($event)" class="btn btn-dark">Excluir Registro</button>
 			</div>
 		</div>
 	</div>

@@ -8,7 +8,7 @@ export class ServicosGeralService {
   
   private registros = [
     {
-      hora: "8:30",
+      hora: "08:30",
       quantidade:"200",
       ident: "12"
     },

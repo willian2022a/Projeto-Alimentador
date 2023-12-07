@@ -1,4 +1,33 @@
 
-<div class="container">
-    Login
+<div class="areaLogin">
+  <div>
+    <div style="margin-top: 1%;" class="col-8 col-md-6 mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input [(ngModel)]="getUsuario().nome" type="email" class="form-control" id="email"
+        placeholder="name@example.com">
+    </div>
+
+    <div class="col-8 col-md-6 mb-3">
+      <label for="senha" class="form-label">Senha</label>
+      <input [(ngModel)]="getUsuario().senha" type="password" class="form-control" id="senha">
+    </div>
+
+    <div> 
+      <button class="btn btn-primary" type="submit" (click)="fazerLogin()">Logar</button>
+    </div>
+  
+    <div *ngIf="auth.error" style="color: red;">
+      {{ auth.error }}
+    </div>
+  
+    <div *ngIf="auth.user" style="margin-top:2%;">
+      <div class="col-md-4 col-lg-4 mb-3 d-flex align-items-center justify-content-center">
+        <p class="m-0">Usuário Loggado: <b>{{ auth.user.email }}</b></p>
+      </div>
+      <div class="col-md-2 col-lg-2 mb-3">
+        <button class="btn btn-danger" (click)="auth.signOut()">Logout</button>
+      </div>
+    </div>
+  </div>
 </div>
+

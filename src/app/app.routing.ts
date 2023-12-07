@@ -5,17 +5,21 @@ import { ModuleWithProviders } from "@angular/core";
 import { LoginComponent } from "./login/login.component";
 import { RegistroComponent } from "./registro/registro.component";
 import { HomeComponent } from "./home/home.component";
-import { CursoDetalheComponent } from "./curso-detalhe/curso-detalhe.component";
-import { CursosComponent } from "./cursos/cursos.component";
-import { CursoNaoEncontradoComponent } from "./curso-nao-encontrado/curso-nao-encontrado.component";
+import { AuthGuard } from "./guards/auth-guard";
 
 const APP_ROUTES: Routes = [
-    { path: 'curso/:id', component: CursoDetalheComponent },
-    { path: 'cursos',    component: CursosComponent },
-    { path: 'registros', component: RegistroComponent },
-    { path: 'login',     component: LoginComponent },
-    { path: 'naoEncontrado', component: CursoNaoEncontradoComponent },
-    { path: '',          component: HomeComponent }
+	{
+		path: 'registros', 
+		component: RegistroComponent,
+		canActivate: [AuthGuard]
+	},
+
+	{ path: 'login', 
+		component: LoginComponent },
+
+	{ path: '', 
+		component: HomeComponent, 
+		canActivate: [AuthGuard] }
 ];
 
 export const routing: ModuleWithProviders<RouterModule> = RouterModule.forRoot(APP_ROUTES);

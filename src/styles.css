@@ -1,22 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
-/* @import "~bootstrap/dist/css/bootstrap.min.css"; */
-/* @import '~materialize-css/dist/css/materialize.css'; */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 #logo {
-    background-image: url("https://www.deco.proteste.pt/-/media/edideco/images/home/familia-consumo/animais%20de%20estima%C3%A7%C3%A3o/noticias/2021/5mitos_aliment_caes_gatos/thumb_5mitos_aliment_caes_gatos_800x450.jpg?rev=54e83849-d3ba-486f-a72f-935a4538e09e&mw=660&hash=E344876BBE810CB027595386D7C4A732");
-    height: 400px;
+    background-image: url("https://chefbob.com.br/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/03/2021-03-11-visceras-na-alimentacao-natural.jpg.webp");
+    width: 70vw;
+    height: 70vh;
     background-color: #cccccc;
     background-repeat: no-repeat;
-    background-size:100% 100%;
+    background-size: 100% 100%;
     margin: auto;
     margin-bottom: 0%;
+    background-color: rgb(255, 255, 255);
 }
 
-body {
-    width: 95%;
-    background-color: rgb(235, 202, 140);
+
+img {
+    max-width: 100%;
+    height: auto;
     margin: auto;
-    border: 2px solid black;
+}
+
+/* Estilos para o contêiner da imagem (pode ser um div que envolve a tag img) */
+.image-container {
+    background-color: #cccccc;
+}
+
+
+body {
+    width: 100%;
+    background-color: rgb(194, 233, 243);
+    margin: auto;
     font-family:'Times New Roman', Times, serif;
 }

@@ -3,9 +3,12 @@
 		Não há horários cadastrados!
 	</p>
 
-	<div class="row" style="margin-top: 5%;">
-		<div class="col-10 col-sm-6">
-			<div class="container" style="background-color: rgb(223, 132, 132); padding: 2%; border-radius: 5px;">
+
+
+	<div class="row" style="padding-left:0.5%; margin: 0%; margin-top: 5%; margin-bottom: 5%;">
+
+		<div class="col-12 col-md-6">
+			<div class="container" style="background-color: rgb(151, 185, 235); padding: 2%; border-radius: 5px;">
 				<div class="row align-items-end justify-content-center">
 					<div class="col-md-3 col-sm-6 col-5  mb-3 mb-sm-0">
 						<label>Hora:</label>
@@ -23,62 +26,46 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="col-12 col-md-6 quantReservatorio">
+			<h5>Quantidade de ração no reservatório: </h5> 
+				{{ quantidadeAtualReservatorio }} gramas
+		</div>
 	</div>
 	
 
-	<!--div class="estiloRegistroBase">
-		<div>
-			<label>Hora:</label>
-			<input type="time" #horaBase />
-		</div>
-		<div>
-			<label>Quantidade (gramas):</label>
-			<input type="number" style="width: 170px;" #qtdBase />
-		</div>
-
-		<button type="button" (click)="adicionarRegistro()" class="btn btn-dark">Adicionar Registro</button>
-	</div-->
-
-	<div class="painelRegistros">
-		<h4 *ngIf="registros.length">
+	<div *ngIf="registros.length" class="row painelRegistros">
+		<h4>
 			Lista de horários cadastrados
 		</h4>
 
-		<div class="listaRegistros">
-			<app-registro-filho *ngFor="let registro of registros" [registroFilho]="registro" [id]="registro.ident"
-				(meuEvento)="paiExcluiRegistro($event)">
+		<div class="row listaRegistros">
+			<app-registro-filho *ngFor="let registro of registros"
+			class="componenteRegistroFilho"
+			[ident]="registro.ident"
+			[hora]="registro.hora"
+			[quantidade]="registro.quantidade" [id]="registro.ident"
+			(meuEvento)="paiExcluiRegistro($event)" (eventoFilhoAtualiza)="atualizarRegistro($event)" >
 			</app-registro-filho>
 		</div>
-	</div>
-
-</div>
-
-
-<p *ngIf="!registros.length">
-	Não há horários cadastrados!
-</p>
-
-<!--
-<div style="background-color: aqua;">
-	<div class="container">
-		<div class="row">
-			<div>
-				<label>Hora:</label>
-				<input type="time" class="form-control" #horaBase />
-			</div>
-
-			<div>
-				<label>Quantidade (gramas):</label>
-				<input type="number" class="form-control" #qtdBase />
-			</div>
-
-			<div>
-				<button type="button" (click)="adicionarRegistro()" class="btn btn-dark btn-sm-2">Adicionar Registro</button>
+		<div class="col-12 col-md-6">
+			<button type="button" (click)="atualizarDocumento()" class="btn btn-secondary">Atualiza Registros</button>
+		</div>
+	
+		<div *ngIf="mostrarModalSucesso" style="margin-top: 2%;" class="row">
+			<div class="col-12 col-md-6 alert alert-success" role="alert">
+				Atualização realizada com Sucesso!
 			</div>
 		</div>
+
+		<div *ngIf="mostrarModalErro" style="margin-top: 2%;" class="row">
+			<div class="col-12 col-md-6 alert alert-danger" role="alert">
+				Erro ao atualizar registro, favor tentar novamente!
+			</div>
+		</div>
+		
 	</div>
 </div>
--->
 
 
 
@@ -86,21 +73,4 @@
 
 
 
-<!--
-<div style="background-color: blueviolet; display: flex; flex-direction: row;">
-	<div>
-		<label>Hora:</label>
-		<input type="time" class="form-control" #horaBase />
-	</div>
 
-	<div>
-		<label>Quantidade (gramas):</label>
-		<input type="number" class="form-control" #qtdBase /> 
-	</div>
-
-	<div>
-		<button type="button" (click)="adicionarRegistro()" class="btn btn-dark btn-sm-2">Adicionar
-			Registro</button>
-	</div>
-</div>
--->
